@@ -2,11 +2,11 @@ import React from 'react'
 
 /**
  * Paper-Craft / Origami Geometric Illustrations (Dobradura em Papel)
- * Cada microrganismo é composto por planos poliédricos facetados com luz, sombra,
- * vincos de dobradura e paleta ultra vibrante sobre base esmeralda/laboratorial.
+ * Todos os microrganismos são simetricamente centralizados no viewBox 240x240 (centro 120,120)
+ * com planos poliédricos facetados, vincos de dobradura e cores vibrantes em 60fps leves.
  */
 export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
-  const dimensions = size === 'lg' ? 210 : size === 'sm' ? 96 : 165
+  const dimensions = size === 'lg' ? 190 : size === 'sm' ? 110 : 156
 
   switch (slug) {
     case 'e-coli':
@@ -20,87 +20,53 @@ export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
             xmlns="http://www.w3.org/2000/svg"
             className="origami-svg"
           >
-            <defs>
-              <filter id="paperShadowEcoli" x="-20%" y="-20%" width="145%" height="145%">
-                <feDropShadow dx="4" dy="8" stdDeviation="5" floodColor="#021f14" floodOpacity="0.48" />
-              </filter>
-              <filter id="foldShadow" x="-10%" y="-10%" width="130%" height="130%">
-                <feDropShadow dx="1" dy="3" stdDeviation="2" floodColor="#042217" floodOpacity="0.35" />
-              </filter>
-            </defs>
+            {/* Base Hexagonal de Dobradura Simétrica (Centro 120,120) */}
+            <polygon points="120,18 208,69 208,171 120,222 32,171 32,69" fill="#0b4630" stroke="#34d399" strokeWidth="2" strokeOpacity="0.5" />
+            <polygon points="120,18 208,69 120,120" fill="#136143" opacity="0.75" />
+            <polygon points="32,69 120,18 120,120" fill="#197853" opacity="0.6" />
+            <polygon points="32,171 120,222 120,120" fill="#083523" opacity="0.85" />
+            <polygon points="208,69 208,171 120,120" fill="#06291b" opacity="0.7" />
 
-            {/* Hexagonal Paper Mat Base */}
-            <polygon points="120,16 210,64 210,176 120,224 30,176 30,64" fill="#0d4a33" stroke="#22c55e" strokeWidth="1.5" strokeOpacity="0.4" />
-            <polygon points="120,16 210,64 120,120" fill="#136143" opacity="0.7" />
-            <polygon points="30,64 120,16 120,120" fill="#197853" opacity="0.55" />
-            <polygon points="30,176 120,224 120,120" fill="#093826" opacity="0.8" />
+            {/* Pili Geométricos (Triângulos de Papel ao redor do Bacilo) */}
+            <polygon points="64,68 48,46 82,58" fill="#fde047" />
+            <polygon points="106,52 108,28 128,48" fill="#38bdf8" />
+            <polygon points="52,108 26,102 48,126" fill="#ff2e93" />
+            <polygon points="72,156 50,174 88,168" fill="#fde047" />
+            <polygon points="146,62 164,40 166,72" fill="#ff6b35" />
 
-            {/* Origami Folded Flagella Ribbons (Vibrant Coral / Hot Pink / Gold) */}
-            <g filter="url(#foldShadow)">
-              <polygon points="158,136 196,150 184,166 148,148" fill="#ff2e93" />
-              <polygon points="196,150 226,138 214,158 184,166" fill="#ff6b35" />
-              <polygon points="226,138 235,168 214,158" fill="#ffd166" />
+            {/* Flagelos em Dobradura (Fitas Coral, Magenta e Ouro) */}
+            <polygon points="156,126 192,138 182,154 148,138" fill="#ff2e93" />
+            <polygon points="192,138 218,128 208,148 182,154" fill="#ff6b35" />
+            <polygon points="218,128 226,154 208,148" fill="#fde047" />
 
-              <polygon points="145,152 178,186 160,196 132,162" fill="#ff5470" />
-              <polygon points="178,186 218,194 198,210 160,196" fill="#ff9f1c" />
-              <polygon points="218,194 232,216 198,210" fill="#fde047" />
+            <polygon points="144,144 176,174 158,186 130,154" fill="#ff5470" />
+            <polygon points="176,174 210,182 194,198 158,186" fill="#ff9f1c" />
 
-              <polygon points="164,116 208,112 200,128 158,128" fill="#f72585" />
-              <polygon points="208,112 234,94 226,118 200,128" fill="#fb8500" />
-            </g>
+            <polygon points="162,108 202,104 194,120 156,120" fill="#f72585" />
+            <polygon points="202,104 224,88 216,112 194,120" fill="#fb8500" />
 
-            {/* Origami Pili Spikes (Geometric Paper Triangles around capsule) */}
-            <polygon points="56,66 42,42 74,56" fill="#fde047" />
-            <polygon points="94,48 92,22 114,44" fill="#38bdf8" />
-            <polygon points="44,104 18,98 40,122" fill="#ff2e93" />
-            <polygon points="62,154 38,172 78,168" fill="#fde047" />
-            <polygon points="134,58 152,34 156,68" fill="#ff6b35" />
+            {/* Corpo Poliédrico do Bacilo E. coli (Ciano Elétrico, Turquesa e Azul) */}
+            <polygon points="60,76 102,50 94,94" fill="#7dd3fc" />
+            <polygon points="60,76 94,94 50,114" fill="#38bdf8" />
+            <polygon points="102,50 146,68 94,94" fill="#22d3ee" />
+            <polygon points="94,94 146,68 138,118" fill="#00f5d4" />
+            <polygon points="50,114 94,94 84,144" fill="#06b6d4" />
+            <polygon points="94,94 138,118 84,144" fill="#0ea5e9" />
+            <polygon points="146,68 178,104 138,118" fill="#67e8f9" />
+            <polygon points="138,118 178,104 166,146" fill="#0284c7" />
+            <polygon points="84,144 138,118 128,168" fill="#0369a1" />
+            <polygon points="138,118 166,146 128,168" fill="#0891b2" />
+            <polygon points="50,114 84,144 64,156" fill="#155e75" />
+            <polygon points="64,156 84,144 128,168" fill="#164e63" />
 
-            {/* Main Faceted Bacillus Body (Low-Poly Origami Capsule in Electric Cyan, Mint & Teal) */}
-            <g filter="url(#paperShadowEcoli)">
-              {/* Top-left Anterior Crown */}
-              <polygon points="52,74 96,46 88,92" fill="#7dd3fc" />
-              <polygon points="52,74 88,92 42,114" fill="#38bdf8" />
-              <polygon points="96,46 142,64 88,92" fill="#22d3ee" />
+            {/* Nucleoide Central em Dobradura */}
+            <polygon points="82,90 116,80 106,108 76,104" fill="#ff2e93" />
+            <polygon points="116,80 140,100 122,122 106,108" fill="#ff9f1c" />
+            <polygon points="106,108 122,122 102,138 88,124" fill="#fde047" />
 
-              {/* Central Faceted Ridge */}
-              <polygon points="88,92 142,64 134,118" fill="#00f5d4" />
-              <polygon points="42,114 88,92 78,146" fill="#06b6d4" />
-              <polygon points="88,92 134,118 78,146" fill="#0ea5e9" />
-
-              {/* Posterior Facets */}
-              <polygon points="142,64 176,102 134,118" fill="#67e8f9" />
-              <polygon points="134,118 176,102 164,148" fill="#0284c7" />
-              <polygon points="78,146 134,118 124,172" fill="#0369a1" />
-              <polygon points="134,118 164,148 124,172" fill="#0891b2" />
-              <polygon points="42,114 78,146 58,158" fill="#155e75" />
-              <polygon points="58,158 78,146 124,172" fill="#164e63" />
-
-              {/* Inner Nucleoid Origami Ribbon (Vibrant Magenta/Gold Center) */}
-              <polygon points="76,88 112,78 102,108 70,104" fill="#ff2e93" />
-              <polygon points="112,78 138,98 118,122 102,108" fill="#ff9f1c" />
-              <polygon points="102,108 118,122 96,140 82,124" fill="#fde047" />
-
-              {/* Crisp Paper Crease Lines */}
-              <polyline
-                points="52,74 88,92 134,118 164,148"
-                stroke="#ecfeff"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <polyline
-                points="96,46 88,92 78,146 124,172"
-                stroke="#cffafe"
-                strokeWidth="1.5"
-                strokeOpacity="0.85"
-              />
-              <polyline
-                points="142,64 134,118 78,146"
-                stroke="#ffffff"
-                strokeWidth="1.5"
-                strokeOpacity="0.7"
-              />
-            </g>
+            {/* Vincos de Luz do Papel */}
+            <polyline points="60,76 94,94 138,118 166,146" stroke="#ecfeff" strokeWidth="2" strokeLinecap="round" />
+            <polyline points="102,50 94,94 84,144 128,168" stroke="#cffafe" strokeWidth="1.5" />
           </svg>
         </div>
       )
@@ -116,59 +82,49 @@ export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
             xmlns="http://www.w3.org/2000/svg"
             className="origami-svg"
           >
-            <defs>
-              <filter id="paperShadowYeast" x="-20%" y="-20%" width="145%" height="145%">
-                <feDropShadow dx="4" dy="8" stdDeviation="5" floodColor="#021f14" floodOpacity="0.5" />
-              </filter>
-            </defs>
+            {/* Base Octogonal Simétrica (Centro 120,120) */}
+            <polygon points="84,18 156,18 214,76 214,164 156,222 84,222 26,164 26,76" fill="#0b4630" stroke="#fde047" strokeWidth="2" strokeOpacity="0.5" />
+            <polygon points="84,18 156,18 120,120" fill="#156c4b" opacity="0.65" />
+            <polygon points="214,76 214,164 120,120" fill="#083523" opacity="0.8" />
+            <polygon points="26,76 84,18 120,120" fill="#197853" opacity="0.5" />
 
-            {/* Origami Octagonal Green Paper Base */}
-            <polygon points="84,18 156,18 214,76 214,158 156,218 84,218 26,158 26,76" fill="#0d4a33" stroke="#34d399" strokeWidth="1.5" strokeOpacity="0.4" />
-            <polygon points="84,18 156,18 120,118" fill="#156c4b" opacity="0.65" />
-            <polygon points="214,76 214,158 120,118" fill="#0a3927" opacity="0.75" />
+            {/* Cristais de Fermentação (Diamantes de Papel) */}
+            <polygon points="48,56 60,40 72,56 60,72" fill="#fde047" />
+            <polygon points="60,40 72,56 60,72" fill="#f59e0b" />
+            <polygon points="186,166 196,152 206,166 196,180" fill="#34d399" />
+            <polygon points="44,172 56,160 68,172 56,184" fill="#ff2e93" />
 
-            {/* Decorative Paper Fermentation Bubbles (Geometric Diamonds) */}
-            <polygon points="48,54 60,38 72,54 60,70" fill="#fde047" />
-            <polygon points="60,38 72,54 60,70" fill="#f59e0b" />
-            <polygon points="192,168 202,154 212,168 202,182" fill="#34d399" />
-            <polygon points="40,174 52,162 64,174 52,186" fill="#ff2e93" />
+            {/* Célula-Filha (Brotamento Superior Direito em Ouro e Coral) */}
+            <polygon points="144,38 178,30 168,62" fill="#fde047" />
+            <polygon points="178,30 204,54 168,62" fill="#fb923c" />
+            <polygon points="144,38 168,62 136,72" fill="#facc15" />
+            <polygon points="168,62 204,54 196,90" fill="#f97316" />
+            <polygon points="168,62 196,90 158,96" fill="#ff2e93" />
+            <polygon points="136,72 168,62 158,96" fill="#fb7185" />
 
-            {/* Main Mother Yeast Cell + Budding Daughter Cell in Faceted Origami Gold/Amber/Coral */}
-            <g filter="url(#paperShadowYeast)">
-              {/* Daughter Budding Cell (Top Right — Vibrant Pink/Tangerine/Gold Polyhedron) */}
-              <polygon points="148,36 184,28 172,62" fill="#fde047" />
-              <polygon points="184,28 212,54 172,62" fill="#fb923c" />
-              <polygon points="148,36 172,62 138,72" fill="#facc15" />
-              <polygon points="172,62 212,54 204,92" fill="#f97316" />
-              <polygon points="172,62 204,92 164,98" fill="#ff2e93" />
-              <polygon points="138,72 172,62 164,98" fill="#fb7185" />
+            {/* Célula-Mãe de Levedura (Gema Poliédrica em Âmbar, Ouro e Magenta) */}
+            <polygon points="68,78 112,62 102,108" fill="#fef08a" />
+            <polygon points="112,62 150,82 102,108" fill="#fde047" />
+            <polygon points="44,122 68,78 102,108" fill="#facc15" />
+            <polygon points="44,122 102,108 78,154" fill="#f59e0b" />
+            <polygon points="102,108 150,82 144,132" fill="#fb923c" />
+            <polygon points="102,108 144,132 114,160" fill="#ea580c" />
+            <polygon points="78,154 102,108 114,160" fill="#d97706" />
+            <polygon points="150,82 174,122 144,132" fill="#f43f5e" />
+            <polygon points="144,132 174,122 158,168" fill="#e11d48" />
+            <polygon points="114,160 144,132 158,168" fill="#be123c" />
+            <polygon points="44,122 78,154 60,180" fill="#b45309" />
+            <polygon points="60,180 78,154 114,194" fill="#92400e" />
+            <polygon points="78,154 114,160 114,194" fill="#c2410c" />
+            <polygon points="114,160 158,168 114,194" fill="#9f1239" />
 
-              {/* Mother Yeast Cell (Large Polyhedral Origami Gem) */}
-              <polygon points="66,78 112,62 102,108" fill="#fef08a" />
-              <polygon points="112,62 152,82 102,108" fill="#fde047" />
-              <polygon points="40,122 66,78 102,108" fill="#facc15" />
-              <polygon points="40,122 102,108 76,156" fill="#f59e0b" />
-              <polygon points="102,108 152,82 146,134" fill="#fb923c" />
-              <polygon points="102,108 146,134 114,162" fill="#ea580c" />
-              <polygon points="76,156 102,108 114,162" fill="#d97706" />
-              <polygon points="152,82 178,124 146,134" fill="#f43f5e" />
-              <polygon points="146,134 178,124 162,172" fill="#e11d48" />
-              <polygon points="114,162 146,134 162,172" fill="#be123c" />
-              <polygon points="40,122 76,156 58,184" fill="#b45309" />
-              <polygon points="58,184 76,156 114,198" fill="#92400e" />
-              <polygon points="76,156 114,162 114,198" fill="#c2410c" />
-              <polygon points="114,162 162,172 114,198" fill="#9f1239" />
+            {/* Núcleo Estelar Verde Esmeralda */}
+            <polygon points="98,112 122,104 130,126 110,140 88,130" fill="#10b981" />
+            <polygon points="98,112 122,104 110,124" fill="#6ee7b7" />
 
-              {/* Inner Origami Nucleus Star */}
-              <polygon points="98,112 122,104 130,126 110,142 88,132" fill="#10b981" />
-              <polygon points="98,112 122,104 110,124" fill="#6ee7b7" />
-              <polygon points="122,104 130,126 110,124" fill="#34d399" />
-
-              {/* Crisp Paper Fold Highlights */}
-              <polyline points="66,78 102,108 146,134 162,172" stroke="#fef9c3" strokeWidth="2" />
-              <polyline points="112,62 102,108 76,156 114,198" stroke="#fde68a" strokeWidth="1.6" />
-              <polyline points="148,36 172,62 204,92" stroke="#fffbeb" strokeWidth="1.8" />
-            </g>
+            {/* Vincos de Papel */}
+            <polyline points="68,78 102,108 144,132 158,168" stroke="#fef9c3" strokeWidth="2" />
+            <polyline points="112,62 102,108 78,154 114,194" stroke="#fde68a" strokeWidth="1.6" />
           </svg>
         </div>
       )
@@ -184,65 +140,52 @@ export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
             xmlns="http://www.w3.org/2000/svg"
             className="origami-svg"
           >
-            <defs>
-              <filter id="paperShadowPen" x="-20%" y="-20%" width="145%" height="145%">
-                <feDropShadow dx="4" dy="8" stdDeviation="5" floodColor="#021f14" floodOpacity="0.5" />
-              </filter>
-            </defs>
+            {/* Base Losango / Octogonal Simétrica */}
+            <polygon points="120,16 218,72 218,168 120,224 22,168 22,72" fill="#0b4630" stroke="#a3e635" strokeWidth="2" strokeOpacity="0.5" />
+            <polygon points="120,16 218,72 120,120" fill="#156b4a" opacity="0.65" />
+            <polygon points="22,72 120,16 120,120" fill="#1c7d58" opacity="0.5" />
+            <polygon points="22,168 120,224 120,120" fill="#083523" opacity="0.8" />
 
-            {/* Diamond Folded Paper Base */}
-            <polygon points="120,14 222,120 120,226 18,120" fill="#0d4a33" stroke="#a3e635" strokeWidth="1.5" strokeOpacity="0.45" />
-            <polygon points="120,14 222,120 120,120" fill="#156b4a" opacity="0.65" />
-            <polygon points="18,120 120,14 120,120" fill="#1c7d58" opacity="0.5" />
+            {/* Haste Conidiófora (Violeta & Índigo) */}
+            <polygon points="108,204 120,132 120,204" fill="#7c3aed" />
+            <polygon points="120,132 132,204 120,204" fill="#5b21b6" />
+            <polygon points="106,148 120,110 134,148" fill="#8b5cf6" />
 
-            <g filter="url(#paperShadowPen)">
-              {/* Conidiophore Stalk (Folded Paper Stem in Vibrant Violet / Indigo) */}
-              <polygon points="108,214 120,136 120,214" fill="#7c3aed" />
-              <polygon points="120,136 132,214 120,214" fill="#5b21b6" />
-              <polygon points="106,152 120,112 134,152" fill="#8b5cf6" />
+            {/* Ramificações Fiálides em Dobradura (Roxo, Magenta & Ciano) */}
+            <polygon points="120,124 76,96 94,132" fill="#c084fc" />
+            <polygon points="76,96 58,76 88,82" fill="#e879f9" />
+            <polygon points="76,96 88,82 98,108" fill="#a855f7" />
 
-              {/* Metulae & Phialides Branches (Origami V-Folds in Electric Purple, Magenta & Cyan) */}
-              {/* Left Branch */}
-              <polygon points="120,126 74,96 92,134" fill="#c084fc" />
-              <polygon points="74,96 56,74 88,82" fill="#e879f9" />
-              <polygon points="74,96 88,82 98,108" fill="#a855f7" />
+            <polygon points="120,120 104,78 120,66" fill="#38bdf8" />
+            <polygon points="120,120 120,66 136,78" fill="#0284c7" />
 
-              {/* Center Branch */}
-              <polygon points="120,122 104,78 120,66" fill="#38bdf8" />
-              <polygon points="120,122 120,66 136,78" fill="#0284c7" />
+            <polygon points="120,124 164,96 146,132" fill="#f472b6" />
+            <polygon points="164,96 182,76 152,82" fill="#fb7185" />
+            <polygon points="164,96 152,82 142,108" fill="#e11d48" />
 
-              {/* Right Branch */}
-              <polygon points="120,126 166,96 148,134" fill="#f472b6" />
-              <polygon points="166,96 184,74 152,82" fill="#fb7185" />
-              <polygon points="166,96 152,82 142,108" fill="#e11d48" />
+            {/* Cadeias de Conídios (Esporos em Diamantes Verde-Limão e Ouro) */}
+            <polygon points="58,76 46,60 58,44 70,60" fill="#a3e635" />
+            <polygon points="58,44 48,32 58,20 68,32" fill="#fde047" />
 
-              {/* Conidia Spore Chains (Vibrant Neon Lime, Emerald & Yellow Origami Diamonds) */}
-              {/* Left Chain 1 */}
-              <polygon points="56,74 44,58 56,42 68,58" fill="#a3e635" />
-              <polygon points="56,42 46,28 56,14 66,28" fill="#fde047" />
-              {/* Left Chain 2 */}
-              <polygon points="84,78 74,62 84,46 94,62" fill="#4ade80" />
-              <polygon points="84,46 76,32 84,18 92,32" fill="#bef264" />
+            <polygon points="86,78 76,62 86,46 96,62" fill="#4ade80" />
+            <polygon points="86,46 78,34 86,22 94,34" fill="#bef264" />
 
-              {/* Center Chain */}
-              <polygon points="120,68 108,50 120,32 132,50" fill="#2dd4bf" />
-              <polygon points="120,32 110,18 120,4 130,18" fill="#fde047" />
+            <polygon points="120,68 108,52 120,36 132,52" fill="#2dd4bf" />
+            <polygon points="120,36 110,24 120,12 130,24" fill="#fde047" />
 
-              {/* Right Chain 1 */}
-              <polygon points="156,78 146,62 156,46 166,62" fill="#34d399" />
-              <polygon points="156,46 148,32 156,18 164,32" fill="#a3e635" />
-              {/* Right Chain 2 */}
-              <polygon points="184,74 172,58 184,42 196,58" fill="#facc15" />
-              <polygon points="184,42 174,28 184,14 194,28" fill="#fb923c" />
+            <polygon points="154,78 144,62 154,46 164,62" fill="#34d399" />
+            <polygon points="154,46 146,34 154,22 162,34" fill="#a3e635" />
 
-              {/* Basal Mycelium Paper Ribbons */}
-              <polygon points="72,204 120,188 108,214" fill="#34d399" />
-              <polygon points="168,204 120,188 132,214" fill="#10b981" />
+            <polygon points="182,76 170,60 182,44 194,60" fill="#facc15" />
+            <polygon points="182,44 172,32 182,20 192,32" fill="#fb923c" />
 
-              {/* Crease Highlights */}
-              <polyline points="120,214 120,66 120,4" stroke="#f0fdf4" strokeWidth="1.8" />
-              <polyline points="74,96 120,126 166,96" stroke="#f5d0fe" strokeWidth="1.6" />
-            </g>
+            {/* Base Micelial */}
+            <polygon points="76,196 120,180 108,204" fill="#34d399" />
+            <polygon points="164,196 120,180 132,204" fill="#10b981" />
+
+            {/* Vincos de Luz */}
+            <polyline points="120,204 120,66 120,12" stroke="#f0fdf4" strokeWidth="1.8" />
+            <polyline points="76,96 120,124 164,96" stroke="#f5d0fe" strokeWidth="1.6" />
           </svg>
         </div>
       )
@@ -258,35 +201,29 @@ export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
             xmlns="http://www.w3.org/2000/svg"
             className="origami-svg"
           >
-            <defs>
-              <filter id="paperShadowLacto" x="-20%" y="-20%" width="145%" height="145%">
-                <feDropShadow dx="4" dy="8" stdDeviation="5" floodColor="#021f14" floodOpacity="0.5" />
-              </filter>
-            </defs>
-            <polygon points="36,36 204,36 204,204 36,204" rx="24" fill="#0d4a33" stroke="#fb7185" strokeWidth="1.5" strokeOpacity="0.4" />
-            <polygon points="36,36 204,36 120,120" fill="#166547" opacity="0.6" />
-            <g filter="url(#paperShadowLacto)">
-              {/* Segment 1: Vibrant Coral/Pink Origami Rod */}
-              <polygon points="44,68 88,48 108,82 64,104" fill="#ff2e93" />
-              <polygon points="88,48 118,64 108,82" fill="#fda4af" />
-              <polygon points="64,104 108,82 96,112" fill="#be185d" />
+            {/* Base Hexagonal Simétrica */}
+            <polygon points="120,18 208,69 208,171 120,222 32,171 32,69" fill="#0b4630" stroke="#fb7185" strokeWidth="2" strokeOpacity="0.5" />
+            <polygon points="120,18 208,69 120,120" fill="#166547" opacity="0.65" />
+            <polygon points="32,171 120,222 120,120" fill="#083523" opacity="0.8" />
 
-              {/* Segment 2: Vibrant Orange/Gold Origami Rod */}
-              <polygon points="96,112 108,82 152,118 134,148" fill="#fb923c" />
-              <polygon points="108,82 144,92 152,118" fill="#fde047" />
-              <polygon points="96,112 134,148 112,156" fill="#ea580c" />
+            {/* Cadeia Segmentada de Bacilos em Dobradura */}
+            <polygon points="48,72 90,52 108,84 66,106" fill="#ff2e93" />
+            <polygon points="90,52 118,66 108,84" fill="#fda4af" />
+            <polygon points="66,106 108,84 96,112" fill="#be185d" />
 
-              {/* Segment 3: Vibrant Violet/Magenta Origami Rod */}
-              <polygon points="134,148 152,118 198,158 176,192" fill="#a855f7" />
-              <polygon points="152,118 192,134 198,158" fill="#e879f9" />
-              <polygon points="134,148 176,192 148,196" fill="#6b21a8" />
+            <polygon points="96,112 108,84 150,118 132,146" fill="#fb923c" />
+            <polygon points="108,84 142,94 150,118" fill="#fde047" />
+            <polygon points="96,112 132,146 112,154" fill="#ea580c" />
 
-              {/* Geometric Lactic Acid Crystals */}
-              <polygon points="166,52 184,38 196,58 176,72" fill="#2dd4bf" />
-              <polygon points="48,162 68,148 80,168 60,182" fill="#fde047" />
+            <polygon points="132,146 150,118 192,154 172,186" fill="#a855f7" />
+            <polygon points="150,118 186,132 192,154" fill="#e879f9" />
+            <polygon points="132,146 172,186 146,190" fill="#6b21a8" />
 
-              <polyline points="44,68 108,82 152,118 198,158" stroke="#fff1f2" strokeWidth="2" />
-            </g>
+            {/* Cristais de Ácido Lático */}
+            <polygon points="162,56 178,42 190,60 172,74" fill="#2dd4bf" />
+            <polygon points="52,158 70,144 82,162 64,176" fill="#fde047" />
+
+            <polyline points="48,72 108,84 150,118 192,154" stroke="#fff1f2" strokeWidth="2" />
           </svg>
         </div>
       )
@@ -302,7 +239,7 @@ export function MicrobeOrigamiArt({ slug, size = 'md', className = '' }) {
             xmlns="http://www.w3.org/2000/svg"
             className="origami-svg"
           >
-            <polygon points="120,18 216,72 216,168 120,222 24,168 24,72" fill="#0d4a33" stroke="#38bdf8" strokeWidth="1.5" strokeOpacity="0.4" />
+            <polygon points="120,18 208,69 208,171 120,222 32,171 32,69" fill="#0b4630" stroke="#38bdf8" strokeWidth="2" strokeOpacity="0.5" />
             <polygon points="62,92 120,54 178,92 156,168 84,168" fill="#38bdf8" />
             <polygon points="120,54 178,92 120,124" fill="#bae6fd" />
             <polygon points="62,92 120,54 120,124" fill="#0284c7" />

@@ -133,17 +133,20 @@ export function HomePage({ user }) {
         {/* Vitrine artística Paper Craft dos 3 microrganismos principais */}
         <div className="origami-hero__showcase">
           <div className="showcase-origami-trio">
-            <div className="showcase-origami-item showcase-origami-item--primary">
-              <MicrobeOrigamiArt slug="e-coli" size="md" />
+            <div className="showcase-origami-item">
+              <MicrobeOrigamiArt slug="e-coli" size="sm" />
               <span className="showcase-origami-caption">E. coli K-12</span>
+              <span className="showcase-origami-sub">Bactéria · ATCC 700926</span>
             </div>
-            <div className="showcase-origami-item showcase-origami-item--secondary">
+            <div className="showcase-origami-item">
               <MicrobeOrigamiArt slug="s-cerevisiae" size="sm" />
               <span className="showcase-origami-caption">Levedura S288C</span>
+              <span className="showcase-origami-sub">Fungo Leveduriforme</span>
             </div>
-            <div className="showcase-origami-item showcase-origami-item--tertiary">
+            <div className="showcase-origami-item">
               <MicrobeOrigamiArt slug="penicillium" size="sm" />
               <span className="showcase-origami-caption">Penicillium</span>
+              <span className="showcase-origami-sub">Fungo Filamentoso</span>
             </div>
           </div>
         </div>
