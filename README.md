@@ -191,19 +191,19 @@ origami-biobank-cepas/
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <b>Desenvolvedor(a) Full Stack</b>
+      <b>Vinicius Montuani</b>
       <br />
-      <sub>Arquitetura React + Supabase, Design Paper Craft em Dobradura, Resumo do Sistema e Requisitos Funcionais (RF01 a RF24)</sub>
+      <sub><b>Desenvolvedor Full Stack</b> · Arquitetura React + Supabase, Design Paper Craft em Dobradura, Resumo do Sistema e Requisitos Funcionais (RF01 a RF24)</sub>
     </td>
     <td align="center" width="33%">
-      <b>QA Sênior</b>
+      <b>Samuel Mioni</b>
       <br />
-      <sub>Planejamento da Suíte de Testes, Matriz de Rastreabilidade (RF x CT) e Escrita dos 38 Casos de Teste (35 de Tela + 3 de Banco)</sub>
+      <sub><b>QA Sênior</b> · Planejamento da Suíte de Testes, Matriz de Rastreabilidade (RF x CT) e Escrita dos 38 Casos de Teste (35 de Tela + 3 de Banco)</sub>
     </td>
     <td align="center" width="33%">
-      <b>QA Júnior</b>
+      <b>Luiz Leite</b>
       <br />
-      <sub>Execução dos 38 Casos de Teste via IP e Banco Supabase, Coleta de Evidências (Prints), Parecer Deferido/Não Deferido e Relatório de Falhas</sub>
+      <sub><b>QA Júnior</b> · Execução dos 38 Casos de Teste via IP e Banco Supabase, Coleta de Evidências (Prints Reais), Parecer Deferido/Não Deferido e Relatório de Falhas</sub>
     </td>
   </tr>
 </table>
