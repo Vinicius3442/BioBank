@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+.env.local
+aqui(apagar dps)/
+*.log
+.DS_Store
