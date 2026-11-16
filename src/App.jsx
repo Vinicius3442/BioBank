@@ -54,6 +54,12 @@ export default function App() {
     setUser(null)
   }
 
+  useEffect(() => {
+    const onForceLogout = () => handleLogout()
+    window.addEventListener('origami-logout', onForceLogout)
+    return () => window.removeEventListener('origami-logout', onForceLogout)
+  }, [])
+
   return (
     <BrowserRouter>
       <div className="origami-app-layout">
