@@ -156,7 +156,6 @@ export function AdminPage({ user }) {
       )}
 
       <section className="origami-paper-card">
-        <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
         <div className="origami-card-header">
           <div className="origami-icon-box origami-icon-box--emerald">
             <ShieldCheck size={22} />

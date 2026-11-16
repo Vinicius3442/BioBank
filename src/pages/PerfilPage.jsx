@@ -65,7 +65,6 @@ export function PerfilPage({ user, onUserUpdate }) {
       <div className="perfil-grid">
         {/* Card 1: Alterar Nome e E-mail (RF13) */}
         <section className="origami-paper-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--emerald">
               <UserCog size={22} />
@@ -129,7 +128,6 @@ export function PerfilPage({ user, onUserUpdate }) {
 
         {/* Card 2: Trocar Senha (RF14) */}
         <section className="origami-paper-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--amber">
               <Lock size={22} />

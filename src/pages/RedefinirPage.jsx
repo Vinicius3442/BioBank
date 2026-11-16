@@ -44,7 +44,6 @@ export function RedefinirPage() {
         </div>
 
         <div className="origami-paper-card origami-auth-form-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--amber">
               <KeyRound size={22} />

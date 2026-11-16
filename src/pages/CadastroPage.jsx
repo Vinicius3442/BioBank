@@ -24,8 +24,6 @@ export function CadastroPage() {
         setErro(res.error)
       } else {
         setSucesso(res.message)
-        setNome('')
-        setEmail('')
         setSenha('')
       }
     } finally {
@@ -49,7 +47,6 @@ export function CadastroPage() {
         </div>
 
         <div className="origami-paper-card origami-auth-form-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--emerald">
               <UserPlus size={22} />

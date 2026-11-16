@@ -93,7 +93,6 @@ export function RequisitarPage({ user }) {
       <div className="requisitar-grid">
         {/* Formulário de Requisição (RF16, RF17) */}
         <section className="origami-paper-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--emerald">
               <FlaskConical size={22} />
@@ -194,7 +193,6 @@ export function RequisitarPage({ user }) {
 
         {/* Últimas 5 requisições do usuário (RF18) */}
         <section className="origami-paper-card">
-          <div className="cepa-origami-card__corner-fold" aria-hidden="true" />
           <div className="origami-card-header">
             <div className="origami-icon-box origami-icon-box--amber">
               <History size={22} />
